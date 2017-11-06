@@ -4,9 +4,9 @@ import YTSearch from 'youtube-api-search';
 import registerServiceWorker from './registerServiceWorker';
 
 //Component
-import SearchBar from './components/search_bar'
-import VideoList from './components/video_list'
-import VideoDetails from './components/video_details'
+import SearchBar from './components/searchBar/search_bar'
+import VideoList from './components/videoList/video_list'
+import VideoDetails from './components/videoDetails/video_details'
 
 const API_KEY = 'AIzaSyBLA9isDmO-0LCm-jio06VHd4HdsUJW23U';
 

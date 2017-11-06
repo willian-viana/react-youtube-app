@@ -1,4 +1,5 @@
 import React from 'react';
+import { videoDetailsContainer } from './style';
 
 const VideoDetails = ({video}) => {
     if (!video) {
