@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
-export const searchBar = styled.div`
+export const SearchBarContainer = styled.div`
     margin: 20px;
     text-align: center;
 `;
 
-export const searchInput = styled.div`
+export const InputSearch = styled.input`
     width: 75%;
+`;
+
+export const ButtonSearch = styled.button`
+    background-color: red;
+    border: 0;
+    color: #fff;
 `;
