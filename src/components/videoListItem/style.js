@@ -5,9 +5,16 @@ export const VideoItemImage = styled.img`
 `;
 
 export const VideoItemList = styled.li`
+
     cursor: pointer;
 
     &:hover {
         background-color: #eee;
     }
+
+    .media-heading{
+        padding: 0 5px;
+    }
+
+
 `;

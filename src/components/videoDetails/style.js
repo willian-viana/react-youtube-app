@@ -5,4 +5,5 @@ export const VideoDetailsContainer = styled.div`
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    color: #fff;
 `;

@@ -34,10 +34,10 @@ class App extends Component {
     }
 
     render() {
-        const videoSearch = _.debou
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 200);
         return (
             <div className="container-fluid"> 
-                <SearchBar onSearchTermChange = {term => this.videoSearch(term)} />
+                <SearchBar onSearchTermChange = {videoSearch} />
                 <div className="row">
                     <VideoDetails video = { this.state.selectedVideo } />
                     <VideoList

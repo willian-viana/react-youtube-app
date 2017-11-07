@@ -7,6 +7,7 @@ export const SearchBarContainer = styled.div`
 
 export const InputSearch = styled.input`
     width: 75%;
+    padding: 5px 10px;
 `;
 
 export const ButtonSearch = styled.button`
