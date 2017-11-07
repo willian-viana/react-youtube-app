@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import registerServiceWorker from './registerServiceWorker';
+import _ from 'lodash';
 
 //Component
 import SearchBar from './components/searchBar/search_bar'
@@ -20,7 +21,11 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({key: API_KEY, term: 'star wars'}, (videos) => {
+        this.videoSearch('star wars');
+    }
+
+    videoSearch(term){
+        YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({ 
                 videos: videos,
                 selectedVideo: videos[0] 
@@ -29,13 +34,16 @@ class App extends Component {
     }
 
     render() {
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 200);
         return (
-            <div> 
-                <SearchBar />
-                <VideoDetails video = { this.state.selectedVideo } />
-                <VideoList
-                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                    videos = { this.state.videos } />
+            <div className="container-fluid"> 
+                <SearchBar onSearchTermChange = {videoSearch} />
+                <div className="row">
+                    <VideoDetails video = { this.state.selectedVideo } />
+                    <VideoList
+                        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                        videos = { this.state.videos } />
+                </div>
             </div>
         );
     };
